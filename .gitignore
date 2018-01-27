@@ -1,0 +1,12 @@
+node_modules
+.npm-debug.log
+tmp
+.sass-cache
+*.css.map
+_assets/images/compress
+_assets/compiled
+.DS_Store
+.ftppass
+._*
+sftpCache.json
+.vscode/ftp-sync.json

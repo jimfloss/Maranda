@@ -11,6 +11,7 @@ Maranda is a base WordPress theme built off of the '_s' theme and tailored to th
 * Headroom v0.9.4
 * Isotope v3.0.5
 * Instafeed v1.4.1
+* Bootstrap 4
 
 ## Features
 * SVG Support

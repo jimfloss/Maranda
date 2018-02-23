@@ -6,8 +6,8 @@ Maranda is a base WordPress theme built off of the '_s' theme and tailored to th
 ## Libraries & Plugins
 
 * Match Height v0.7.2
-* scrollTo v2.1.0
-* Slick Slider v1.6.0
+* scrollTo v2.1.2
+* Slick Slider v1.8.0
 * Headroom v0.9.4
 * Isotope v3.0.5
 * Instafeed v1.4.1
@@ -15,3 +15,9 @@ Maranda is a base WordPress theme built off of the '_s' theme and tailored to th
 
 ## Features
 * SVG Support
+
+## Changelog
+
+### 22 Feb 2018
+* Updated scrollTo v2.1.0 to scrollTo v2.1.2
+* Updated Slick Slider v1.6.0 to  Slick Slider v1.6.0

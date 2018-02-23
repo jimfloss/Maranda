@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -29,6 +29,10 @@ Maranda includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.1 February 22, 2018 =
+* Updated scrollTo v2.1.0 to scrollTo v2.1.2
+* Updated Slick Slider v1.6.0 to  Slick Slider v1.6.0
+
 = 1.0 - January 27, 2018 =
 * Initial release
 
@@ -36,8 +40,8 @@ Maranda includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-* Slick Slider v1.6.0 http://kenwheeler.github.io, (c) 2017 Ken Wheeler, [MIT](https://opensource.org/licenses/MIT)
-* scrollTo v2.1.0 https://github.com/flesler/jquery.scrollTo, (c) 2007-2015 Ariel Flesler, [MIT](https://opensource.org/licenses/MIT)
+* Slick Slider v1.8.0 http://kenwheeler.github.io, (c) 2017 Ken Wheeler, [MIT](https://opensource.org/licenses/MIT)
+* scrollTo v2.1.2 https://github.com/flesler/jquery.scrollTo, (c) 2007-2015 Ariel Flesler, [MIT](https://opensource.org/licenses/MIT)
 * Headroom v0.9.4 http://wicky.nillia.ms/headroom.js/, (c) 2017 Nick Williams, [MIT](https://opensource.org/licenses/MIT)
 * Instafeed v1.4.1 http://instafeedjs.com/, (c) Steven Schobert, [MIT](https://opensource.org/licenses/MIT)
 * Isotope v3.0.5 https://isotope.metafizzy.co, (c) 2017 Metafizzy, [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)

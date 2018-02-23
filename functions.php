@@ -45,9 +45,9 @@ if ( ! function_exists( 'maranda_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'maranda' ),
-  		'menu-2' => esc_html__( 'Footer', 'maranda' ),
-  		'menu-3' => esc_html__( 'Header Utility', 'maranda' ),
-  		'menu-4' => esc_html__( 'Footer Utility', 'maranda' ),
+	  		'menu-2' => esc_html__( 'Footer', 'maranda' ),
+	  		'menu-3' => esc_html__( 'Header Utility', 'maranda' ),
+	  		'menu-4' => esc_html__( 'Footer Utility', 'maranda' ),
 		) );
 
 		/*
@@ -314,21 +314,25 @@ add_action('admin_head', 'fix_svg_thumb_display');
  */
 function maranda_scripts() {
 
-  wp_enqueue_style( 'maranda-style', get_stylesheet_uri() );
-
-  wp_enqueue_script( 'jquery' );
-  wp_enqueue_script( 'maranda-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-  wp_enqueue_script( 'match-height', get_template_directory_uri() . '/js/match-height.min.js', array(), '0.7.2', true );
-  wp_enqueue_script( 'scrollTo', get_template_directory_uri() . '/js/scrollTo.min.js', array(), '2.1.0', true );
-  wp_enqueue_script( 'slick-slider', get_template_directory_uri() . '/js/slick.min.js', array(), '1.6.0', true );
-  wp_enqueue_script( 'headroom', get_template_directory_uri() . '/js/headroom.min.js', array(), '0.9.4', true );
-  wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.min.js', array(), '3.0.5', true );
-  wp_enqueue_script( 'instafeed', get_template_directory_uri() . '/js/instafeed.min.js', array(), '1.4.1', true );
-  wp_enqueue_script( 'maranda-scripts', get_template_directory_uri() . '/js/maranda-scripts.js', array('jquery','match-height','scrollTo', 'slick-slider', 'headroom', 'isotope', 'instafeed' ), '0.0.1', true );
-
-  //IMPORTANT The AJAX script must be named after the js AND the ajax object must be an underscore not a hyphen AND it has to go beneath the js
-  wp_localize_script( 'maranda-scripts', 'ajax_object', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
-
+	wp_enqueue_style( 'maranda-style', get_stylesheet_uri() );
+	
+	//Enqueue jQuery, jQuery Core and jQuery Migrate in the footer
+	wp_scripts()->add_data( 'jquery', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+	
+	wp_enqueue_script( 'maranda-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/js/headroom.min.js', array(), '0.9.4', true );
+	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.min.js', array(), '3.0.5', true );
+	wp_enqueue_script( 'instafeed', get_template_directory_uri() . '/js/instafeed.min.js', array(), '1.4.1', true );
+	wp_enqueue_script( 'match-height', get_template_directory_uri() . '/js/match-height.min.js', array('jquery'), '0.7.2', true );
+	wp_enqueue_script( 'scrollTo', get_template_directory_uri() . '/js/scrollTo.min.js', array('jquery'), '2.1.0', true );
+	wp_enqueue_script( 'slick-slider', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.6.0', true );
+	wp_enqueue_script( 'maranda-scripts', get_template_directory_uri() . '/js/maranda-scripts.js', array('jquery','match-height','scrollTo', 'slick-slider', 'headroom', 'isotope', 'instafeed' ), '0.0.1', true );
+	
+	//IMPORTANT The AJAX script must be named after the js AND the ajax object must be an underscore not a hyphen AND it has to go beneath the js
+	wp_localize_script( 'maranda-scripts', 'ajax_object', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

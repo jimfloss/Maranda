@@ -27,3 +27,12 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// Calculate line-height based on PSD leading value
+@mixin line-height($leading: 0) {
+	@if $leading {
+		line-height: calc($leading/2);
+	} else {
+		line-height: 1.5;
+	}
+}

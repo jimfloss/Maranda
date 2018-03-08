@@ -140,6 +140,7 @@ if( !function_exists('slugify') ) {
   /**
    * Slugify
    * @param $text
+   * @return url friendlt text
    */
   function slugify($text) {
     $text = preg_replace("/[^A-Za-z0-9 -]/", '', $text);
@@ -160,7 +161,8 @@ if( !function_exists('slugify') ) {
 if( !function_exists('getBrowser') ) {
   /**
    * Browser Detection
-   * http://php.net/manual/en/function.get-browser.php
+   * @link http://php.net/manual/en/function.get-browser.php
+   * @return browser information
    */
   function getBrowser() {
     $u_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -258,7 +260,7 @@ if( !function_exists('maranda_custom_pagination') ) {
    * @param $numpages
    * @param $pagerange
    * @param $paged
-   * http://callmenick.com/post/custom-wordpress-loop-with-pagination
+   * @link http://callmenick.com/post/custom-wordpress-loop-with-pagination
    */
   function maranda_custom_pagination($numpages = '', $pagerange = '', $paged='') {
     if (empty($pagerange)) {
@@ -319,7 +321,6 @@ if( !function_exists('auto_copyright') ) {
 if( !function_exists('utility_nav') ) {
   /**
    * Utility Nav
-   * @param $year
    */
   function utility_nav() {
     ob_start();
@@ -763,3 +764,24 @@ if( !function_exists('maranda_slug_sanitize_js') ) {
   	return esc_js( $js );
   }
 }
+
+if( ! function_exists( 'maranda_str_lreplace' ) ) :
+  /**
+   * Replaces last instance of substring
+   *
+   * @param string $search - heystack
+   * @param string $subject - needle
+   * @param string $replace - replacement string
+   * @return edited string
+   */
+  function maranda_str_lreplace($search, $replace, $subject) {
+      $pos = strrpos($subject, $search);
+
+      if($pos !== false) {
+        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+      }
+
+      return $subject;
+  }
+
+endif;
